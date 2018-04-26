@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -17,7 +17,7 @@
     "pg": "^7.4.1"
   },
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mayorgarojasgamedeveloper/cineperlaapi.git"
