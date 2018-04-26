@@ -6,7 +6,6 @@ var logger = require('morgan');
 var cors = require('cors');
 var db = require('./assets/database.js');
 
-var indexRouter = require('./routes/index');
 var usuarioRouter = require('./routes/usuario');
 var adminRouter = require('./routes/administrador');
 var peliculaRouter = require('./routes/pelicula');
@@ -27,7 +26,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', indexRouter);
+app.get('/', (req, res) => {
+  res.send('API Cineperla');
+});
+
 app.use('/usuario', usuarioRouter);
 app.use('/admin', adminRouter);
 //app.use('/pelicula', peliculaRouter);
