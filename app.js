@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/usuario', usuarioRouter);
 app.use('/admin', adminRouter);
-app.use('/pelicula', peliculaRouter);
+//app.use('/pelicula', peliculaRouter);
 app.use('/funcion', funcionRouter);
 app.use('/recibo', reciboRouter);
 app.use('/log', logRouter);
