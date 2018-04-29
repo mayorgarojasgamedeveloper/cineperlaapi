@@ -12,7 +12,7 @@ router.get('/existe', function(req, res, next) {
   var resp = controller.admin_existe(req, res);
   resp.then(result => res.json(result.rows)).catch(e => res.json(e));
 });
-//Descarga la info de un admin
+//Descarga la info de todos los admin
 router.get('/', function(req, res, next) {
   var resp = controller.admin_descargar(req, res);
   resp.then(result => res.json(result.rows)).catch(e => res.json(e));

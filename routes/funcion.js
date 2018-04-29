@@ -27,5 +27,10 @@ router.delete('/', function(req, res, next) {
   var resp = controller.funcion_eliminar(req, res);
   resp.then(result => res.json(result.rows)).catch(e => res.json(e));
 });
+//Borra todas las funciones de una pelicula
+router.delete('/pelicula', function(req, res, next) {
+  var resp = controller.funcion_eliminar_pelicula(req, res);
+  resp.then(result => res.json(result.rows)).catch(e => res.json(e));
+});
 
 module.exports = router;

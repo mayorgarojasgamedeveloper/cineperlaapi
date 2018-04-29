@@ -6,7 +6,7 @@ module.exports = class Usuario {
     return db.INSERT(`funcion`, `peliculaId,dia,hora`, `\'${peliculaId}\',\'${dia}\',\'${hora}\'`, `funcionId`);
   }
   funcion_lista(peliculaId) {
-    return db.SELECT(`funcion`, `funcionId,peliculaId,dia,hora,asientos`, `peliculaId=\'${peliculaId}\'`);
+    return db.SELECT(`funcion`, `funcionId,peliculaId,dia,hora,asientos`, `peliculaId=\'${peliculaId}\'`, null, `dia, hora`);
   }
   funcion_actualizar(funcionId,peliculaId,dia,hora) {
     return db.UPDATE(`funcion`, `peliculaId=\'${peliculaId}\',dia=\'${dia}\',hora=\'${hora}\'`, `funcionId=\'${funcionId}\'`);
@@ -16,5 +16,8 @@ module.exports = class Usuario {
   }
   funcion_eliminar(funcionId) {
     return db.DELETE(`funcion`, `funcionId=\'${funcionId}\'`);
+  }
+  funcion_eliminar_pelicula(peliculaId) {
+    return db.DELETE(`funcion`, `peliculaId=\'${peliculaId}\'`);
   }
 };

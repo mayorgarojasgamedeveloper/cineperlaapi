@@ -17,10 +17,10 @@ create table usuario (
     nombre			varchar(40) NOT NULL,
     apellido		varchar(40) NOT NULL,
     correo			varchar(40) NOT NULL,
-    contrasena		varchar(40) NOT NULL,
+    contrasena		varchar(50) NOT NULL,
     premium			bool NOT NULL DEFAULT false,
     cartera			int NOT NULL DEFAULT 0,
-    usuario			varchar(20) NOT NULL,
+    usuario			varchar(20) NOT NULL UNIQUE,
     primary key (usuarioId)
 );
 
@@ -29,8 +29,8 @@ create table admin (
     nombre			varchar(40) NOT NULL,
     apellido		varchar(40) NOT NULL,
     correo			varchar(40) NOT NULL,
-    contrasena		varchar(40) NOT NULL,
-    usuario			varchar(20) NOT NULL,
+    contrasena		varchar(50) NOT NULL,
+    usuario			varchar(20) NOT NULL UNIQUE,
     primary key(adminId)
 );
 
@@ -116,3 +116,4 @@ drop function log_eliminar_pelicula();
 DROP TRIGGER trigger_log_eliminar_pelicula ON pelicula;
 
 drop table admin,funcion,log,pelicula,recibo,usuario;
+drop table admin;

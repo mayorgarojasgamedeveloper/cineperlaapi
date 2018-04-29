@@ -10,7 +10,7 @@ exports.admin_existe = function(req, res) {
 };
 
 exports.admin_descargar = function(req, res) {
-  return usuario.admin_descargar(req.query.adminId);
+  return usuario.admin_descargar();
 };
 
 exports.admin_actualizar_cont = function(req, res) {
@@ -18,5 +18,5 @@ exports.admin_actualizar_cont = function(req, res) {
 };
 
 exports.admin_borrar = function(req, res) {
-  return usuario.admin_borrar(req.body.adminId, req.body.contrasena);
+  return usuario.admin_borrar(req.body.adminId);
 };

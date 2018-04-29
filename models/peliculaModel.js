@@ -6,7 +6,7 @@ module.exports = class Usuario {
     return db.INSERT(`pelicula`, `nombre,sinopsis,categoria,duracion,restriccion,director,actores,portada`, `\'${nombre}\',\'${sinopsis}\',\'${categoria}\',\'${duracion}\',\'${restriccion}\',\'${director}\',\'${actores}\',\'${portada}\'`, `peliculaId`);
   }
   pelicula_lista() {
-    return db.SELECT(`pelicula`, `peliculaId,nombre,sinopsis,categoria,restriccion,portada`);
+    return db.SELECT(`pelicula`, `*`,null, `nombre`);
   }
   pelicula_vista(peliculaId) {
     return db.SELECT(`pelicula`, `peliculaId,nombre,sinopsis,categoria,duracion,restriccion,director,actores,portada`, `peliculaId=\'${peliculaId}\'`);

@@ -20,3 +20,7 @@ exports.funcion_asientos = function(req, res) {
 exports.funcion_eliminar = function(req, res) {
   return pelicula.funcion_eliminar(req.body.funcionId);
 };
+
+exports.funcion_eliminar_pelicula = function(req, res) {
+  return pelicula.funcion_eliminar(req.body.peliculaId);
+};
